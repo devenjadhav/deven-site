@@ -116,17 +116,19 @@
   }
 
   .sphere-container {
-    display: flex;
+    width: 100%;
+    display: flex !important;
     flex-direction: row !important;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 2rem;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
   }
 
-  .heading img.sphere {
-    margin: 0;
-    width: 45px;
-    display: inline-block;
+  .sphere {
+    display: inline-block !important;
+    width: 45px !important;
+    margin: 0 !important;
   }
 
   .heading > div {
@@ -251,9 +253,19 @@ a:hover {
   background-color: var(--link-hover-bg);
 }
 
+.sphere-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 2rem;
+}
+
 .sphere {
+  display: inline-block;
   width: 45px;
-  margin-right: 8px;
   transition: all 0.5s ease;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
 }
@@ -310,16 +322,6 @@ a:hover {
   object-position: center;
   border-radius: 4px;
   filter: grayscale(0.2) contrast(1.1);
-}
-
-.sphere-container {
-  display: flex;
-  flex-direction: row !important;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 1.5rem;
-  width: 100%;
 }
 
 .heading img.sphere {
