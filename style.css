@@ -102,31 +102,63 @@
   .container {
     flex-direction: column;
     padding: 0 1rem;
+    align-items: center;
   }
 
   .heading {
     padding: 2rem 1rem;
     width: 100%;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .heading img {
-    margin-bottom: 1rem;
+  .sphere-container {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+  }
+
+  .heading img.sphere {
+    margin: 0;
+    width: 45px;
+    display: inline-block;
+  }
+
+  .heading > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .heading h1 {
     margin: 0.3rem 0;
     font-size: 1.1rem;
+    text-align: center;
+    width: 100%;
   }
 
   .content {
     padding: 1rem;
     font-size: 1rem;
     line-height: 1.5;
-    max-width: 100%;
+    max-width: 500px;
+    text-align: left;
+  }
+
+  .profile-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-image img {
+    margin: 0 auto;
   }
 }
 
@@ -278,4 +310,20 @@ a:hover {
   object-position: center;
   border-radius: 4px;
   filter: grayscale(0.2) contrast(1.1);
+}
+
+.sphere-container {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.heading img.sphere {
+  margin: 0;
+  width: 45px;
+  display: inline-block;
 }
