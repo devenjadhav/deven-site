@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&family=Syne:wght@400;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Podkova:wght@400;500;600;700&display=swap"
+    />
+
+    <title>Deven Jadhav</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="column heading">
+        <img
+          src="/symbol.svg"
+          alt="Deven Jadhav Symbol"
+          class="sphere sphere-1"
+        />
+        <img
+          src="/symbol.svg"
+          alt="Deven Jadhav Symbol"
+          class="sphere sphere-2"
+        />
+        <img
+          src="/symbol.svg"
+          alt="Deven Jadhav Symbol"
+          class="sphere sphere-3"
+        />
+
+        <div>
+          <h1>Deven Jadhav</h1>
+          <h1><a href="blogs.html">Blog</a></h1>
+          <h1><a href="https://www.instagram.com/devenjadhav9/">Instagram</a></h1>
+          <h1><a href="https://www.linkedin.com/in/jadhavdeven/">LinkedIn</a></h1>
+        </div>
+
+        <div class="profile-image">
+          <img src="profile.jpg" alt="Deven Jadhav" />
+        </div>
+      </div>
+
+      <div class="column content">
+        <p>
+          <script>
+            const currentHour = new Date().getHours();
+            const currentDay = new Date().getDay();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            let timeGreeting;
+            
+            if (currentHour < 12) {
+              timeGreeting = "Good morning";
+            } else if (currentHour < 17) {
+              timeGreeting = "Good afternoon";
+            } else {
+              timeGreeting = "Good evening";
+            }
+            
+            document.write(`${timeGreeting}, and happy ${days[currentDay]}!`);
+          </script>
+          
+          My name is Deven, and I'm a 19 year old based out of North Carolina! When I was 14, and decided to teach myself to code. That changed the trajectory of my life, and I am working on bringing that experience to thousands of students across the world. I currently work as the events and production lead at <a href="https://hackclub.com">[Hack Club]</a>.
+        </p>
+
+        I am also a freshman at
+        <a href="https://unc.edu">[UNC Chapel Hill]</a> studying a combination
+        of philosophy, computer science, and behavioural psychology. <span id="goheels" class="theme-trigger">[Go Heels!]</span>
+
+        <p>
+          Apart from making things, hackathons and coffee, I like playing the guitar,
+          having deep conversations with my friends, and ham radio (KQ4CHM).
+        </p>
+
+        <p>
+          I have a deep interest in public engineering education, and a lot of my work at Hack Club revolves around making building projects a national pastime for teenagers around the world.
+        </p>
+
+        <p>
+          Finally, if you're interested in tech, running hackathons, production,
+          or just about anything, please reach out to me via email.
+          My email is my first name at this domain. If you're based out of
+          Vermont, or the Chapel Hill area, I would love to meet you in person
+          and buy you a coffee.
+        </p>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,281 @@
+/* Add theme variables at the top */
+:root {
+  --primary-color: #B446A5;
+  --background-color: #fef9f8;
+  --text-color: #383f32;
+  --link-hover-bg: #B446A5;
+  --link-hover-color: white;
+  --gradient-color-1: rgba(255, 182, 193, 0.4);  /* Light pink */
+  --gradient-color-2: rgba(173, 216, 230, 0.4);  /* Light blue */
+  --gradient-color-3: rgba(255, 218, 185, 0.4);  /* Light orange */
+  --gradient-color-4: rgba(255, 255, 153, 0.4);  /* Light yellow */
+  
+  /* Font options - uncomment one to switch */
+  --main-font: 'Podkova', serif;
+}
+
+/* Carolina Blue theme */
+[data-theme="carolina"] {
+  --primary-color: #4B9CD3;
+  --background-color: #fff;
+  --text-color: #13294B;
+  --link-hover-bg: #4B9CD3;
+  --link-hover-color: white;
+  --gradient-color-1: rgba(75, 156, 211, 0.15);
+  --gradient-color-2: rgba(19, 41, 75, 0.15);
+  --gradient-color-3: rgba(75, 156, 211, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.column {
+  flex: 0 1 auto;
+}
+
+.heading {
+  padding-left: 4rem;
+  padding-top: 195px;
+  width: 200px;
+}
+
+.heading > div {
+  margin-top: 1.5rem;
+}
+
+.heading img {
+  margin-bottom: 0.5rem;
+  margin-top: 5px;
+}
+
+.heading h1:first-of-type {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.heading h1 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+#devTitle {
+  display: inline-block; /* Ensures padding works properly */
+}
+
+.devTitle {
+  padding-top: 0px; /* Moves  just the text inside the heading */
+  display: inline-block; /* Ensures padding works properly */
+}
+
+.content {
+  flex: 1;
+  padding-right: 4rem;
+  padding-left: 6rem;
+  padding-top: 200px;
+  font-size: 1.1rem;
+  text-align: left;
+  line-height: 1.6;
+  max-width: 800px;
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding-right: 2rem;
+    padding-left: 4rem;
+  }
+  .heading {
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .heading {
+    padding: 2rem 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heading img {
+    margin-bottom: 1rem;
+  }
+
+  .heading h1 {
+    margin: 0.3rem 0;
+    font-size: 1.1rem;
+  }
+
+  .content {
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  letter-spacing: -0.01em;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  font-weight: 300;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  background-image: 
+    radial-gradient(circle at 50% 50%, var(--gradient-color-1) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, var(--gradient-color-2) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, var(--gradient-color-3) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, var(--gradient-color-4) 0%, transparent 45%);
+  background-size: 150px 150px, 150px 150px, 150px 150px, 150px 150px;
+  background-position: 
+    calc(50% + (var(--mouse-x, 0) - 50) * 0.4%) calc(50% + (var(--mouse-y, 0) - 50) * -0.3%),
+    calc(50% + (var(--mouse-x, 0) - 50) * -0.5%) calc(50% + (var(--mouse-y, 0) - 50) * 0.4%),
+    calc(50% + (var(--mouse-x, 0) - 50) * 0.3%) calc(50% + (var(--mouse-y, 0) - 50) * 0.5%),
+    calc(50% + (var(--mouse-x, 0) - 50) * -0.4%) calc(50% + (var(--mouse-y, 0) - 50) * -0.4%);
+  opacity: 1;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+@keyframes gradientShift {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+::selection {
+  color: #383f32;
+  background: #fbc5c5;
+}
+
+@font-face {
+  font-family: "apple_garamondregular";
+  src: url("/font/applegaramond-webfont.woff2") format("woff2"),
+    url("/font/applegaramond-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 0 0.15rem;
+  margin: 0 -0.15rem;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  background-color: var(--link-hover-bg);
+}
+
+.theme-trigger {
+  cursor: pointer;
+  color: var(--primary-color);
+  padding: 0 0.15rem;
+  margin: 0 -0.15rem;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.theme-trigger:hover {
+  color: var(--link-hover-color);
+  background-color: var(--link-hover-bg);
+}
+
+.sphere {
+  width: 45px;
+  margin-right: 8px;
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+}
+
+.sphere-1 {
+  animation: colorChange1 12s infinite;
+}
+
+.sphere-2 {
+  animation: colorChange2 15s infinite;
+  animation-delay: 3s;
+}
+
+.sphere-3 {
+  animation: colorChange3 18s infinite;
+  animation-delay: 6s;
+  margin-right: 0;
+}
+
+@keyframes colorChange1 {
+  0% { filter: hue-rotate(0deg) brightness(1.2); }
+  25% { filter: hue-rotate(90deg) brightness(1.3); }
+  50% { filter: hue-rotate(180deg) brightness(1.2); }
+  75% { filter: hue-rotate(270deg) brightness(1.3); }
+  100% { filter: hue-rotate(360deg) brightness(1.2); }
+}
+
+@keyframes colorChange2 {
+  0% { filter: hue-rotate(120deg) brightness(1.3); }
+  33% { filter: hue-rotate(240deg) brightness(1.2); }
+  66% { filter: hue-rotate(360deg) brightness(1.3); }
+  100% { filter: hue-rotate(480deg) brightness(1.2); }
+}
+
+@keyframes colorChange3 {
+  0% { filter: hue-rotate(240deg) brightness(1.2); }
+  20% { filter: hue-rotate(300deg) brightness(1.3); }
+  40% { filter: hue-rotate(360deg) brightness(1.2); }
+  60% { filter: hue-rotate(420deg) brightness(1.3); }
+  80% { filter: hue-rotate(480deg) brightness(1.2); }
+  100% { filter: hue-rotate(540deg) brightness(1.3); }
+}
+
+.profile-image {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.profile-image img {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+  filter: grayscale(0.2) contrast(1.1);
+}

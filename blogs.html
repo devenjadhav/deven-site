@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Podkova:wght@400;500;600;700&display=swap"
+    />
+    <title>Deven's Blogs</title>
+    <style>
+      .password-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 2rem;
+      }
+
+      .password-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 300px;
+        width: 100%;
+      }
+
+      .password-input {
+        padding: 0.8rem;
+        border: 2px solid var(--primary-color);
+        border-radius: 4px;
+        font-family: var(--main-font);
+        font-size: 1rem;
+      }
+
+      .password-button {
+        padding: 0.8rem;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-family: var(--main-font);
+        font-size: 1rem;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      .password-button:hover {
+        opacity: 0.9;
+      }
+
+      .error-message {
+        color: var(--primary-color);
+        text-align: center;
+        margin-top: 1rem;
+        display: none;
+      }
+
+      .blog-content {
+        display: none;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .blog-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .blog-item {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .blog-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
+
+      .blog-date {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .blog-excerpt {
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="password-container" id="passwordContainer">
+      <div class="password-form">
+        <input
+          type="password"
+          class="password-input"
+          placeholder="Enter password"
+          id="passwordInput"
+        />
+        <button class="password-button" onclick="checkPassword()">Enter</button>
+        <div class="error-message" id="errorMessage">
+          Incorrect password. Please try again.
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-content" id="blogContent">
+      <h1>Blog Posts</h1>
+      <ul class="blog-list">
+        <!-- Example blog entries - you can add more -->
+        <li class="blog-item">
+          <h2 class="blog-title">The Future of AI in Education</h2>
+          <div class="blog-date">March 15, 2024</div>
+          <p class="blog-excerpt">
+            Exploring how artificial intelligence is transforming the way we learn and teach...
+          </p>
+        </li>
+        <li class="blog-item">
+          <h2 class="blog-title">Building a Personal Website</h2>
+          <div class="blog-date">February 28, 2024</div>
+          <p class="blog-excerpt">
+            A guide to creating your own personal website from scratch...
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      function checkPassword() {
+        const password = document.getElementById('passwordInput').value;
+        const correctPassword = 'Galileo';
+        
+        if (password === correctPassword) {
+          document.getElementById('passwordContainer').style.display = 'none';
+          document.getElementById('blogContent').style.display = 'block';
+        } else {
+          document.getElementById('errorMessage').style.display = 'block';
+        }
+      }
+
+      // Allow Enter key to submit password
+      document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          checkPassword();
+        }
+      });
+    </script>
+  </body>
+</html> 
